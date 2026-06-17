@@ -77,7 +77,7 @@ FinalMask 在核心处理完包括 TLS/REALITY 在内的传输层加密后，对
 
 该层伪装的类型。
 
-> `settings`: header-custom | fragment | sudoku
+> `settings`: Object
 
 该伪装类型的具体设置（每个类型的字段见下）
 
@@ -191,11 +191,11 @@ FinalMask 在核心处理完包括 TLS/REALITY 在内的传输层加密后，对
 }
 ```
 
-> `type`: header-custom | header-dns | header-dtls | header-srtp | header-utp | header-wechat | header-wireguard | mkcp-original | mkcp-aes128gcm | noise | salamander | sudoku | xdns | xicmp
+> `type`: header-custom | mkcp-legacy | noise | salamander (gecko) | sudoku | xdns | xicmp | realm
 
 该层伪装的类型。
 
-> `settings`: header-custom | header-dns | mkcp-aes128gcm | noise | salamander | sudoku | xdns | xicmp
+> `settings`: Object
 
 该伪装类型的具体设置（每个类型的字段见下）
 
@@ -282,9 +282,16 @@ Salamander 混淆。（来自 Hysteria2）
 
 ```json
 {
-  "password": "your-password"
+  "password": "your-password",
+  "packetSize": "512-1200"
 }
 ```
+
+> `password`: string
+
+> `packetSize`: Int32Range
+
+To enable gecko.
 
 ### sudoku
 

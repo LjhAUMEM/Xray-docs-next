@@ -77,7 +77,7 @@ FinalMask добавляет последний слой маскировки п
 
 Тип этого слоя маскировки.
 
-> `settings`: header-custom | fragment | sudoku
+> `settings`: Object
 
 Конкретные настройки для этого типа маскировки. Поля каждого типа приведены ниже.
 
@@ -191,11 +191,11 @@ FinalMask добавляет последний слой маскировки п
 }
 ```
 
-> `type`: header-custom | header-dns | header-dtls | header-srtp | header-utp | header-wechat | header-wireguard | mkcp-original | mkcp-aes128gcm | noise | salamander | sudoku | xdns | xicmp
+> `type`: header-custom | mkcp-legacy | noise | salamander (gecko) | sudoku | xdns | xicmp | realm
 
 Тип этого слоя маскировки.
 
-> `settings`: header-custom | header-dns | mkcp-aes128gcm | noise | salamander | sudoku | xdns | xicmp
+> `settings`: Object
 
 Конкретные настройки для этого типа маскировки. Поля каждого типа приведены ниже.
 
@@ -282,9 +282,16 @@ FinalMask добавляет последний слой маскировки п
 
 ```json
 {
-  "password": "your-password"
+  "password": "your-password",
+  "packetSize": "512-1200"
 }
 ```
+
+> `password`: string
+
+> `packetSize`: Int32Range
+
+To enable gecko.
 
 ### sudoku
 
